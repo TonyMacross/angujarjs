@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html ng-App>
 <head>
-	<title>Example 2-4</title>
+	<title>Example 2-5</title>
 	<script src="js/angular.min.js"></script>
 </head>
 <body>
-	<p ng-show="true">Paragraph 1, can you see me?</p>
-	<p ng-show="false">Paragraph 2, can you see me?</p>
-	<p ng-show="1 == 1">Paragraph 3, can you see me?</p>
-	<p ng-show="1 == 2">Paragraph 4, can you see me?</p>
-
+	<button ng-click="count = count + 1" ng-init="count = 0">
+	Increment
+	</button>
+	count: {{count}}
 </body>
 </html>
