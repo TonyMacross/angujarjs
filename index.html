@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html ng-App>
 <head>
-	<title>Example 2-5</title>
+	<title>Example 2-5.2</title>
 	<script src="js/angular.min.js"></script>
 </head>
 <body>
-	<button ng-click="count = count + 1" ng-init="count = 0">
-	Increment
-	</button>
-	count: {{count}}
+  <h1>Expression Samples</h1>
+  <!-- Basic arithmetic -->
+  <p>6 + 4 = {{6 + 4}}</p>
+  <!-- Using a JavaScript string method -->
+  <p>{{"Beginning AngularJS".toUpperCase()}}</p>
+  <!-- Searching for an occurence of 'D' -->
+  <p>{{"ABCDEFG".indexOf('D')}}</p>
+  <!-- Ternary operation -->
+  <p>{{1==1 ? "Red" : "Blue"}}</p>
 </body>
 </html>
