@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html ng-App>
 <head>
-	<title>Example 2-3</title>
+	<title>Example 2-4</title>
 	<script src="js/angular.min.js"></script>
 </head>
 <body>
-	<label>City: </label><input ng-model="app.city" type="text" /></label><br>
-	<label>Zip: </label><input ng-model="app.zip" type="text" /></label><br>
-	<p>You entered: {{app.city}}</p>
-	<p>You entered: {{app.zip}}</p>
+	<p ng-show="true">Paragraph 1, can you see me?</p>
+	<p ng-show="false">Paragraph 2, can you see me?</p>
+	<p ng-show="1 == 1">Paragraph 3, can you see me?</p>
+	<p ng-show="1 == 2">Paragraph 4, can you see me?</p>
 
 </body>
 </html>
