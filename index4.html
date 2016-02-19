@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-App="myApp">
 <head>
-	<title>Example 4-4</title>
+	<title>Example 4-4.2</title>
 	<script src="js/angular.min.js"></script>
 	<script>
 		var myApp = angular.module('myApp',[]);
@@ -21,8 +21,7 @@
 <body>
 	<div ng-controller='MyFilterDemoCtrl'>
 		<p>
-	    	Consumption: {{data.consumption }}<br/> 
-	    	Consumption: {{data.consumption | number }}
+	    	<p>Data used this quarter:<strong> {{ data.consumption | number:2 }} </strong>gigabytes</p>
 		</p>
 	</div>
 		
