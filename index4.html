@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-App="myApp">
 <head>
-	<title>Example 4-4.2</title>
+	<title>Example 4-5</title>
 	<script src="js/angular.min.js"></script>
 	<script>
 		var myApp = angular.module('myApp',[]);
@@ -10,7 +10,7 @@
             var someData = {
                 firstName: 'JENNA',
                 surname: 'GRANT',
-                dateJoined: new Date(2010, 2, 23),
+                dateJoined: new Date(2016, 2, 23),
                 consumption: 123.659855,
                 plan: 'super-basic-plan'
             };
@@ -20,9 +20,11 @@
 </head>
 <body>
 	<div ng-controller='MyFilterDemoCtrl'>
-		<p>
-	    	<p>Data used this quarter:<strong> {{ data.consumption | number:2 }} </strong>gigabytes</p>
-		</p>
+		<p>medium:<strong> {{ data.dateJoined | date:'medium'}} </strong></p>
+		<p>mediumDate:<strong> {{ data.dateJoined | date:'mediumDate'}} </strong></p>
+		<p>shortDate:<strong> {{ data.dateJoined | date:'shortDate'}} </strong></p>
+		<p>This customer joined in the month of {{ data.dateJoined | date:'MMMM'}} on a {{
+		data.dateJoined | date:'EEEE'}} at {{ data.dateJoined | date:'ha'}}</p>
 	</div>
 		
 </body>
