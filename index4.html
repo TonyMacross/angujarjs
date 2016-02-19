@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-App="myApp">
+<head>
+	<title>Example 4-1</title>
+	<script src="js/angular.min.js"></script>
+	<script>
+		var myApp = angular.module('myApp',[]);
+
+		/*
+		myApp.controller('FirstController', function($scope) {
+			var employees = ['Antonio','Juan','Miguel','Pedro'];
+			$scope.ourEmployees = employees;
+		})*/
+
+		myApp.controller('MyFilterDemoCtrl', function($scope) {
+            var someData = {
+                firstName: 'JENNA',
+                surname: 'GRANT',
+                dateJoined: new Date(2010, 2, 23),
+                consumption: 123.659855,
+                plan: 'super-basic-plan'
+            };
+            $scope.data = someData;
+		})
+
+
+	</script>
+</head>
+<body>
+	<!--
+	<div ng-controller='FirstController'>
+		<h2>Number or employees: {{ourEmployees.length}}</h2>
+		<p ng-repeat="employee in ourEmployees">{{employee}}</p>
+	</div>-->
+	<div ng-controller='MyFilterDemoCtrl'>
+		<p>
+    	<!-- Unfiltered data -->
+	    <strong>First Name</strong>: {{data.firstName}}<br/>
+	    <strong>Surname:</strong> {{data.surname}}
+		</p>
+		<p>
+		<!-- Filtered data -->
+		<strong>First Name</strong>: {{data.firstName | lowercase}}<br/> <strong>Surname:</strong> {{data.surname | lowercase }}
+		</p>
+	</div>
+		
+</body>
+</html>
