@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-App>
+<head>
+	<title>Example 3-2</title>
+	<script src="js/angular.min.js"></script>
+	<script>
+		function MyFirstCtrl($scope) {
+			var employees = ['Antonio','Juan','Miguel','Pedro'];
+			$scope.ourEmployees = employees;
+		}
+
+
+	</script>
+</head>
+<body ng-controller='MyFirstCtrl'>
+	<h2>Number or employees: {{ourEmployees.length}}</h2>
+</body>
+</html>
