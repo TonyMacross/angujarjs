@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-App="myApp">
 <head>
-	<title>Example 4-3</title>
+	<title>Example 4-4</title>
 	<script src="js/angular.min.js"></script>
 	<script>
 		var myApp = angular.module('myApp',[]);
@@ -14,9 +14,6 @@
                 consumption: 123.659855,
                 plan: 'super-basic-plan'
             };
-            // do the lowercaing here instead of using a filter 
-            someData.firstName = someData.firstName.toLowerCase(); 
-            someData.surname = someData.surname.toLowerCase(); 
             $scope.data = someData;
 		})
 	</script>
@@ -24,9 +21,8 @@
 <body>
 	<div ng-controller='MyFilterDemoCtrl'>
 		<p>
-    	<!-- Unfiltered data -->
-	    <strong>First Name</strong>: {{data.firstName}}<br/>
-	    <strong>Surname:</strong> {{data.surname}}
+	    	Consumption: {{data.consumption }}<br/> 
+	    	Consumption: {{data.consumption | number }}
 		</p>
 	</div>
 		
