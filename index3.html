@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-App="myApp">
 <head>
-	<title>Example 3-2</title>
+	<title>Example 3-4</title>
 	<script src="js/angular.min.js"></script>
 	<script>
 		var myApp = angular.module('myApp',[]);
@@ -17,5 +17,6 @@
 </head>
 <body ng-controller='FirstController'>
 	<h2>Number or employees: {{ourEmployees.length}}</h2>
+	<p ng-repeat="employee in ourEmployees">{{employee}}</p>
 </body>
 </html>
