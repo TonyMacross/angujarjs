@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html ng-App="myAppModule">
 <head>
-	<title>Example 5-1</title>
+	<title>Example 5-10</title>
 	<script src="js/angular.min.js"></script>
 	<script src="js/myAppModule.js"></script>
 	<style>
-		body { font-family: Verdana; }
-		div {
-			margin: 20px;
-			padding: 20px;
-			font-size: 16px;
-			color:#fff;
-		}
-		#red 	{ background-color: red; }
-		#green 	{ background-color: green; }
-		#blue 	{ background-color: blue; }
-		#purple { background-color: purple; }
-		#gray 	{ background-color: gray; }
-		#olive 	{ background-color: olive; }
-	</style>
+        #colorContainer div {
+            color: white;
+            text-transform: uppercase;
+            width: 200px;
+            padding: 10px;
+            margin:5px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+</style>
 </head>
-<body ng-controller='myProductDetailCtrl'>
+<body ng-controller='myDemoCtrl'>
 	<h2>AngulasJS Socks !!</h2>
 	<p>Keep warm this winter with our 100% wool, 100% cool, AngularJS socks!</p>
-	<button ng-click="showHideColors()" type="button">
-    	{{isHidden ? 'Show Available Colors' : 'Hide Available Colors'}}
-	</button>
-	<div id="red" ng-hide="isHidden">Red</div>
-	<div id="green" ng-hide="isHidden">Green</div>
-	<div id="blue" ng-hide="isHidden">Blue</div>
-	<div id="purple" ng-hide="isHidden">Purple</div>
-	<div id="gray" ng-hide="isHidden">Dark Slate Gray</div>
-	<div id="olive" ng-hide="isHidden">Olive</div>
-	<div ng-include="'./include-me.html'"></div>
+	<div color-list colors="colorsArray"></div>
 </body>
 </html>
