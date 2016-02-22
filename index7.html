@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html ng-App="myAppModule">
 <head>
-	<title>Angular Servives Example 7-3</title>
+	<title>Angular Servives Example 7-4</title>
 	<script src="js/angular.min.js"></script>
 	<script>
 		var module = angular.module('myAppModule', []);
 
-		module.controller('MyController', function($scope, $document){
-			$scope.docTitle = $document[0].title;
-		});
+		module.factory('dateTimeService', function () {
+            var dateTimeSvc = {};
+            dateTimeSvc.getDate = function () {
+                return new Date().toDateString();
+            }
+            dateTimeSvc.getTime = function () {
+            	return new Date().toTimeString();
+			} 
+			return dateTimeSvc;
+		}).controller("MyController", function ($scope, dateTimeService) {
+            $scope.theDate = dateTimeService.getDate();
+            $scope.theTime = dateTimeService.getTime();
+        });
 
 	</script>
 </head>
 <body ng-controller='MyController'>
-	<p>The page title is: {{docTitle}}</p>
+	<p>{{theDate}}</p>
+    <p>{{theTime}}</p>
 </body>
 </html>
