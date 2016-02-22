@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html ng-App="myAppModule">
 <head>
-	<title>Angular Servives Example 7-2</title>
+	<title>Angular Servives Example 7-3</title>
 	<script src="js/angular.min.js"></script>
-	<!-- <script src="js/myAppModule.js"></script> -->
 	<script>
-		var module = /**
-		* myAppModule Module
-		*
-		* Description
-		*/
-		angular.module('myAppModule', []);
+		var module = angular.module('myAppModule', []);
 
-		module.controller('MyController', function($scope, $location){
-			$scope.url = $location.absUrl();
-			$scope.protocol = $location.protocol();
-			$scope.host = $location.host();
-			$scope.port = $location.port();
+		module.controller('MyController', function($scope, $document){
+			$scope.docTitle = $document[0].title;
 		});
 
 	</script>
 </head>
 <body ng-controller='MyController'>
-	<p>The URL is: {{url}}</p>
-	<ul>
-	    <li>{{protocol}}</li>
-	    <li>{{host}}</li>
-	    <li>{{port}}</li>
-	</ul>
+	<p>The page title is: {{docTitle}}</p>
 </body>
 </html>
