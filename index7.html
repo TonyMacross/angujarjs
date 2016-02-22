@@ -6,25 +6,13 @@
 	<script>
 		var module = angular.module('myAppModule', []);
 
-		module.factory('dateTimeService', function(){
-
-			var dateTimeSvc = {};
-			dateTimeSvc.getDate = function() {
-				return new Date().toDateString();
-			}
-			dateTimeSvc.getTime = function(){
-				return new Date().toTimeString();
-			};
-			return dateTimeSvc;
-		}).controller('MyController', function($scope, dateTimeService){
-			$scope.theDate = dateTimeService.getDate();
-			$scope.theTime = dateTimeService.getTime();
+		module.controller('MyController', function($scope, $document){
+			$scope.docTitle = $document[0].title;
 		});
 
 	</script>
 </head>
 <body ng-controller='MyController'>
-	<p>{{theDate}}</p>
-    <p>{{theTime}}</p>
+	<p>The page title is: {{docTitle}}</p>
 </body>
 </html>
