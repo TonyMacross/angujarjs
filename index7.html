@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-App="myAppModule">
 <head>
-	<title>Example 7-1</title>
+	<title>Angular Servives Example 7-2</title>
 	<script src="js/angular.min.js"></script>
 	<!-- <script src="js/myAppModule.js"></script> -->
 	<script>
@@ -12,16 +12,21 @@
 		*/
 		angular.module('myAppModule', []);
 
-		module.controller('MyController', function($scope, $window){
-			$scope.winWidth = $window.innerWidth;
+		module.controller('MyController', function($scope, $location){
+			$scope.url = $location.absUrl();
+			$scope.protocol = $location.protocol();
+			$scope.host = $location.host();
+			$scope.port = $location.port();
 		});
 
 	</script>
 </head>
 <body ng-controller='MyController'>
-	<h2>Windows Service</h2>
-	<div>
-	    <p>Window width: {{winWidth}}px</p>
-	</div>
+	<p>The URL is: {{url}}</p>
+	<ul>
+	    <li>{{protocol}}</li>
+	    <li>{{host}}</li>
+	    <li>{{port}}</li>
+	</ul>
 </body>
 </html>
