@@ -1,0 +1,15 @@
+<!DOCTYPE html >
+<html ng-app="myapp">
+<head>
+    <title>Angular Services 7-3</title>
+    <script src="js/angular.min.js"></script>
+    <script>
+var module = angular.module('myapp', []); module.controller("MyController", function ($scope, $document) {
+$scope.docTitle = $document[0].title;
+        });
+    </script>
+</head>
+<body ng-controller="MyController">
+    <p>The page title is: {{docTitle}}</p>
+</body>
+</html>
